@@ -14,12 +14,17 @@
       
               <script> 
     $(function(){
+        $("#content").load("1_0.html");
         $("#1_1").click(function() {
             $("#content").load("1_1.html");
         });
         
         $("#1_2").click(function() {
             $("#content").load("1_2.html");
+        });
+        
+        $("#2_1").click(function() {
+            $("#content").load("2_1.html");
         });
         
     });
@@ -36,20 +41,24 @@
       <h2 class="project-tagline">Prosjektoppgave i MA155</h2>
     </section>
     <section class="main-content">
-
-
         
-    <h2>Innhold:</h2>
-     <b>1. Introduksjon: </b><br>
-     <a id="1_1" href="#">1.1 Basics om Mathematica og Wolfram Alpha</a><br>
-     <a id="1_2" href="#">1.2 Oppsett og grunnleggende innstillinger.</a><br>
-     <b>2. Data </b><br>
-     <a href="">2.1 .....blbla</a>
+      
+
+
+        <h2>Innhold:</h2>
+      <DL>
+        <DT>1. Introduksjon</DT>
+          <DD><a id="1_1" href="#">1.1 Basics om Mathematica og Wolfram Alpha</a></DD>
+          <DD><a id="1_2" href="#">1.2 Oppsett og grunnleggende innstillinger.</a></DD>
+        <DT>2. Data</DT>
+            <DD><a id ="2_1" href="#">2.1 Importere data fra excel<a/></DD>
+        </DL>
         
+          </a>
 
 
 
-
+<hr>
         
         <div id="content"></div>
         
