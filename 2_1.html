@@ -1,4 +1,30 @@
-<h2>2.1 Importere data fra excel</h2><br>
-<img src="img/2_1.jpg"><br>
-Gi dataen som importeres et valgfritt navn. I dette tilfellet "s" (s for seigmann) <br>
-<img src="img/2_1_1.jpg"><br>
+<h2>2.1 Kumulative data, tabeller, og diagrammer</h2><br>
+
+Her tar vi utganspunkt i dataen vi har hentet fra en excell fil (se forrige kapitell). Dataen vi jobber med i dette eksemplet er gitt navnet "s"<br>
+Dataen består av en tabell men en liste over lengden man kan strekke forskjellige seigmenn før de ryker (resultat), og en tilsvarende liste som sier noe om fargen på den aktuelle seigmannen (farge)<p></p>
+<b>Hente ut spesifikk kollonne/rad fra tabell</b><br>
+s[rad, kolonne]<br>
+sResultat = s[All, 1]<br>
+
+<b>Frekvenstabell:</b><br>
+Tally[liste over utfall utfall]
+sf = Tally[{1, 1, 2, 3, 2,}]<br>
+output: sf = {{1, 2}, {2, 2}, {3, 1}]<br>
+
+Vi kan vise tabellen med kommandoen sf //TableForm
+bilde...<br>
+Første kollonne er utfall, andre kollonne er antall tilfeller.<br>
+<b>Kumulativ frekvenstabell:</b><br>
+For å vise kumulativt antall bruker vi funksjonen Accumulate[data (antall tilfeller)].
+Siden det er antall tilfeller vi ønsker å akumulere må vi hente ut daten fra andre kollonne i frekvenstabellen:<br>
+sf2 = sf[All, 2] (tabell[rad, kollonne])<br>
+kl = Accumulate[sf2] (Akumulerer lista og lagrer den med navnet kl)<br>
+main = MapThread[Append, {sf, kl}] (legger til akkumulert liste i tabellen og lagrer med navnet main)<p></p>
+
+<b>Generere tabeller og diagrammer</b><br>
+tabell = Prepend[main, {"Resultat", "Antall", "Kumulativt antall"}]<br>
+tabell //TableForm<br>
+stolpediagram = BarChart[{1,2,3}, ChartLabels->{"a", "b", "c"}]
+
+<br>
+

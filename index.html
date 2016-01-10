@@ -15,6 +15,9 @@
               <script> 
     $(function(){
         $("#content").load("1_0.html");
+        $("#1_0").click(function() {
+            $("#content").load("1_0.html");
+        });
         $("#1_1").click(function() {
             $("#content").load("1_1.html");
         });
@@ -22,9 +25,18 @@
         $("#1_2").click(function() {
             $("#content").load("1_2.html");
         });
+         $("#1_3").click(function() {
+            $("#content").load("1_3.html");
+        });
+         $("#2_0").click(function() {
+            $("#content").load("2_0.html");
+        });
         
         $("#2_1").click(function() {
             $("#content").load("2_1.html");
+        });
+        $("#2_2").click(function() {
+            $("#content").load("2_2.html");
         });
         
     });
@@ -48,12 +60,16 @@
         <h2>Innhold:</h2>
       <DL>
         <DT>1. Introduksjon</DT>
+            <DD><a id="1_1" href="#">1.0 Om denne guiden</a></DD>
           <DD><a id="1_1" href="#">1.1 Basics om Mathematica og Wolfram Alpha</a></DD>
           <DD><a id="1_2" href="#">1.2 Oppsett og grunnleggende innstillinger.</a></DD>
+        <DD><a id="1_3" href="#">1.3 Grunnleggende Syntaks</a></DD>
         <DT>2. Data</DT>
-            <DD><a id ="2_1" href="#">2.1 Importere data fra excel<a/></DD>
+            <DD><a id ="2_0" href="#">2.0 Importere/Eksportere data fra/til excel<a/></DD>
+            <DD><a id ="2_1" href="#">2.1 Kumulative data, tabeller, og diagrammer<a/></DD>
         </DL>
-        
+             <DD><a id ="2_2" href="#">2.2 Beliggenhetsmål og spredningsmål<a/></DD>
+        </DL>
           </a>
 
 
